@@ -11,7 +11,7 @@ angular.module('vinyl')
 
       var deferred = $q.defer();
       var ops = options || {};
-      ops.perPage = ops.perPage || 25;
+      ops.perPage = ops.perPage || 100;
       ops.page = ops.page || 1;
 
       Label.releases({ id: id }).$promise.then(function(data) {

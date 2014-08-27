@@ -33,7 +33,11 @@ angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
     $urlRouterProvider.otherwise('/app/collection');
   }])
 
-  .run(["$ionicPlatform", function($ionicPlatform) {
+  .run(["$ionicPlatform", "$rootScope", function($ionicPlatform, $rootScope) {
+
+    $rootScope.$on('$stateChangeStart', function() {
+      console.log('route');
+    });
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -99,13 +103,24 @@ angular.module('vinyl')
 
 angular.module('vinyl')
 
-  .controller('CollectionCtrl', ["$scope", "ArtistService", "LabelService", "OmniAuthService", function($scope, ArtistService, LabelService, OmniAuthService) {
+  .controller('CollectionCtrl', ["$scope", "$ionicLoading", "ArtistService", "LabelService", "OmniAuthService", function($scope, $ionicLoading, ArtistService, LabelService, OmniAuthService) {
     console.log('hi from CollectionCtrl');
 
     $scope.collection = [];
 
-    LabelService.getReleases(1234).then(function(releases) {
+    $ionicLoading.show({
+        template: 'Loading Data...',
+        noBackdrop: true
+    });
+
+    // Returns a random number between min (inclusive) and max (exclusive)
+    function getRandomArbitrary(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    }
+
+    LabelService.getReleases(getRandomArbitrary(1, 9999)).then(function(releases) {
       $scope.collection = releases;
+      $ionicLoading.hide();
     });
 
     $scope.onHold = function () {
@@ -114,6 +129,9 @@ angular.module('vinyl')
 
 
     OmniAuthService.requestToken('http://api.discogs.com/oauth/request_token', 'myKey', 'mySecret', 'http://localhost:8100/#/app/auth');
+
+
+
 
   }]);
 'use strict';
@@ -195,7 +213,7 @@ angular.module('vinyl')
 
       var deferred = $q.defer();
       var ops = options || {};
-      ops.perPage = ops.perPage || 25;
+      ops.perPage = ops.perPage || 100;
       ops.page = ops.page || 1;
 
       Label.releases({ id: id }).$promise.then(function(data) {

@@ -33,7 +33,11 @@ angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
     $urlRouterProvider.otherwise('/app/collection');
   })
 
-  .run(function($ionicPlatform) {
+  .run(function($ionicPlatform, $rootScope) {
+
+    $rootScope.$on('$stateChangeStart', function() {
+      console.log('route');
+    });
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
