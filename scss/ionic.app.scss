@@ -30,4 +30,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     color: $energized;
     font-size: 12px;
   }
+  .year {
+    position: absolute;
+    right: 16px;
+    bottom: 0px;
+    color: $energized;
+    font-size: 12px;
+  }
+}
+
+.popup {
+  width: 90%;
+  margin: 0 auto;
 }

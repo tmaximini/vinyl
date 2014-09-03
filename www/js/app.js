@@ -1,16 +1,17 @@
 
-angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
+angular.module('vinyl', ['ionic', 'ngResource'])
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    $httpProvider.defaults.withCredentials = true;
+
     $stateProvider
-
       .state('app', {
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-
       .state('app.search', {
         url: '/search',
         views: {
@@ -19,13 +20,21 @@ angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
           }
         }
       })
-
       .state('app.collection', {
         url: '/collection',
         views: {
           'menuContent': {
             templateUrl: 'templates/collection.html',
             controller: 'CollectionCtrl',
+          }
+        }
+      })
+      .state('app.wantlist', {
+        url: '/wantlist',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/wantlist.html',
+            controller: 'WantlistCtrl',
           }
         }
       });

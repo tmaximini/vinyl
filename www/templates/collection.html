@@ -4,11 +4,15 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
     <h1>Collection</h1>
+
     <ion-list>
       <ion-item on-hold="onHold()" ng-repeat="track in collection">
-        {{track.title}}
+        {{track.basic_information.title}}
         <span class="artist">
-          {{track.artist}}
+          {{track.basic_information.artists[0].name}}
+        </span>
+        <span class="year">
+          {{track.basic_information.year}}
         </span>
       </ion-item>
     </ion-list>

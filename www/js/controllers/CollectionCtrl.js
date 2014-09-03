@@ -2,34 +2,31 @@
 
 angular.module('vinyl')
 
-  .controller('CollectionCtrl', function($scope, $ionicLoading, ArtistService, LabelService, OmniAuthService) {
+  .controller('CollectionCtrl', function($scope, $window, $ionicLoading, $ionicPopup, ArtistService, LabelService, UserService, AuthService) {
     console.log('hi from CollectionCtrl');
 
     $scope.collection = [];
+    $scope.userLoggedIn = false;
+    var loginWindow;
 
     $ionicLoading.show({
-        template: 'Loading Data...',
-        noBackdrop: true
+      template: 'Loading Collection...',
+      noBackdrop: true
     });
 
-    // Returns a random number between min (inclusive) and max (exclusive)
-    function getRandomArbitrary(min, max) {
-      return Math.round(Math.random() * (max - min) + min);
-    }
 
-    LabelService.getReleases(getRandomArbitrary(1, 9999)).then(function(releases) {
-      $scope.collection = releases;
-      $ionicLoading.hide();
+    AuthService.testLoggedIn().then(function(isLoggedIn) {
+      if (!isLoggedIn) {
+        AuthService.showAuthPopup();
+      } else {
+        UserService.getCollection().then(function(data) {
+          $ionicLoading.hide();
+          console.log('collection: ', data);
+          $scope.collection = data.releases;
+          $scope.pagination = data.pagination;
+        });
+      }
+
     });
-
-    $scope.onHold = function () {
-      console.log('hold!');
-    };
-
-
-    OmniAuthService.requestToken('http://api.discogs.com/oauth/request_token', 'myKey', 'mySecret', 'http://localhost:8100/#/app/auth');
-
-
-
 
   });

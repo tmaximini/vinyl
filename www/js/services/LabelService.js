@@ -21,9 +21,19 @@ angular.module('vinyl')
       return deferred.promise;
     };
 
+
+    var getRandomLabel = function() {
+      // Returns a random number between min (inclusive) and max (exclusive)
+      var getRandomArbitrary = function(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+      return this.getReleases(getRandomArbitrary(0, 9999));
+    };
+
     return {
       get: get,
-      getReleases: getReleases
+      getReleases: getReleases,
+      getRandomLabel: getRandomLabel
     };
 
   });

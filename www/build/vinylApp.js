@@ -1,16 +1,17 @@
 
-angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
+angular.module('vinyl', ['ionic', 'ngResource'])
 
-  .config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
+  .config(["$stateProvider", "$urlRouterProvider", "$httpProvider", function($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    $httpProvider.defaults.withCredentials = true;
+
     $stateProvider
-
       .state('app', {
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-
       .state('app.search', {
         url: '/search',
         views: {
@@ -19,13 +20,21 @@ angular.module('vinyl', ['ionic', 'ngResource', 'OmniAuth'])
           }
         }
       })
-
       .state('app.collection', {
         url: '/collection',
         views: {
           'menuContent': {
             templateUrl: 'templates/collection.html',
             controller: 'CollectionCtrl',
+          }
+        }
+      })
+      .state('app.wantlist', {
+        url: '/wantlist',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/wantlist.html',
+            controller: 'WantlistCtrl',
           }
         }
       });
@@ -103,35 +112,64 @@ angular.module('vinyl')
 
 angular.module('vinyl')
 
-  .controller('CollectionCtrl', ["$scope", "$ionicLoading", "ArtistService", "LabelService", "OmniAuthService", function($scope, $ionicLoading, ArtistService, LabelService, OmniAuthService) {
+  .controller('CollectionCtrl', ["$scope", "$window", "$ionicLoading", "$ionicPopup", "ArtistService", "LabelService", "UserService", "AuthService", function($scope, $window, $ionicLoading, $ionicPopup, ArtistService, LabelService, UserService, AuthService) {
     console.log('hi from CollectionCtrl');
 
     $scope.collection = [];
+    $scope.userLoggedIn = false;
+    var loginWindow;
 
     $ionicLoading.show({
-        template: 'Loading Data...',
-        noBackdrop: true
+      template: 'Loading Collection...',
+      noBackdrop: true
     });
 
-    // Returns a random number between min (inclusive) and max (exclusive)
-    function getRandomArbitrary(min, max) {
-      return Math.round(Math.random() * (max - min) + min);
-    }
 
-    LabelService.getReleases(getRandomArbitrary(1, 9999)).then(function(releases) {
-      $scope.collection = releases;
-      $ionicLoading.hide();
+    AuthService.testLoggedIn().then(function(isLoggedIn) {
+      if (!isLoggedIn) {
+        AuthService.showAuthPopup();
+      } else {
+        UserService.getCollection().then(function(data) {
+          $ionicLoading.hide();
+          console.log('collection: ', data);
+          $scope.collection = data.releases;
+          $scope.pagination = data.pagination;
+        });
+      }
+
     });
 
-    $scope.onHold = function () {
-      console.log('hold!');
-    };
+  }]);
+'use strict';
+
+angular.module('vinyl')
+
+  .controller('WantlistCtrl', ["$scope", "$window", "$ionicLoading", "$ionicPopup", "ArtistService", "LabelService", "UserService", "AuthService", function($scope, $window, $ionicLoading, $ionicPopup, ArtistService, LabelService, UserService, AuthService) {
+    console.log('hi from WantlistCtrl');
+
+    $scope.collection = [];
+    $scope.userLoggedIn = false;
+    var loginWindow;
+
+    $ionicLoading.show({
+      template: 'Loading Wantlist...',
+      noBackdrop: true
+    });
 
 
-    OmniAuthService.requestToken('http://api.discogs.com/oauth/request_token', 'myKey', 'mySecret', 'http://localhost:8100/#/app/auth');
+    AuthService.testLoggedIn().then(function(isLoggedIn) {
+      if (!isLoggedIn) {
+        AuthService.showAuthPopup();
+      } else {
+        UserService.getWantlist().then(function(data) {
+          $ionicLoading.hide();
+          console.log('collection: ', data);
+          $scope.collection = data.wants;
+          $scope.pagination = data.pagination;
+        });
+      }
 
-
-
+    });
 
   }]);
 'use strict';
@@ -203,6 +241,46 @@ angular.module('vinyl')
 'use strict';
 
 angular.module('vinyl')
+  .service('AuthService', ["$q", "$window", "$http", function ($q, $window, $http) {
+
+    var user = null;
+    var userLoggedIn = false;
+
+    var showAuthPopup = function() {
+      $window.open('http://localhost:3000/auth', '_blank', 'location=no,toolbar=no');
+    };
+
+    var testLoggedIn = function() {
+      var deferred = $q.defer();
+      $http.get('http://localhost:3000/me')
+        .success(function(data) {
+          console.log('data:', data);
+          if (!data.error && data.username) {
+            console.log('user is logged in!');
+            userLoggedIn = true;
+            deferred.resolve(userLoggedIn);
+          } else {
+            console.log('user is NOT logged in!');
+            userLoggedIn = false;
+            deferred.resolve(userLoggedIn);
+          }
+        });
+      return deferred.promise;
+    };
+
+
+
+
+    return {
+      showAuthPopup: showAuthPopup,
+      testLoggedIn: testLoggedIn
+    };
+
+
+  }]);
+'use strict';
+
+angular.module('vinyl')
   .factory('LabelService', ["$q", "Label", function ($q, Label) {
 
     var get = function(id) {
@@ -223,45 +301,80 @@ angular.module('vinyl')
       return deferred.promise;
     };
 
+
+    var getRandomLabel = function() {
+      // Returns a random number between min (inclusive) and max (exclusive)
+      var getRandomArbitrary = function(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+      return this.getReleases(getRandomArbitrary(0, 9999));
+    };
+
     return {
       get: get,
-      getReleases: getReleases
+      getReleases: getReleases,
+      getRandomLabel: getRandomLabel
     };
 
   }]);
 
 'use strict';
 
+angular.module('vinyl')
+  .service('UserService', ["$q", "$window", "$http", function ($q, $window, $http) {
 
-angular.module('OmniAuth', [])
-  .service('OmniAuthService', ["$http", function($http) {
+    var collection, wantlist;
 
-    var requestToken = function (endpoint, consumerKey, consumerSecret, callback) {
-
-      var authHeader = 'OAuth oauth_consumer_key="' + consumerKey + '",' +
-                       'oauth_nonce="' + Date.now() + '",' +
-                       'oauth_signature="' + consumerSecret + '",' +
-                       'oauth_signature_method="HMAC-SHA1",' +
-                       'oauth_timestamp="' + Date.now() + '",' +
-                       'oauth_callback="' + callback + '"';
+    var BASE_URL = 'http://localhost:3000/me/'
 
 
-      console.log(authHeader);
-
-      return $http({
-        method: 'GET',
-        url: endpoint,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': authHeader
-        }
-      });
-
+    var fetch = function(col) {
+      return $http({ medthod: 'GET', url: BASE_URL + col })
+                .success(function(data) {
+                  if (col === 'collection') {
+                    collection = data;
+                  }
+                  if (col === 'wantlist') {
+                    wantlist = data;
+                  }
+                })
+                .error(function(error) {
+                  // redirect to auth
+                });
     };
 
+    var getCollection = function() {
+      var defer = $q.defer();
+      if (collection) {
+        defer.resolve(collection);
+      }
+      else {
+        this.fetch('collection').then(function() {
+          defer.resolve(collection);
+        });
+      }
+      return defer.promise;
+    };
+
+
+    var getWantlist = function() {
+      var defer = $q.defer();
+      if (wantlist) {
+        defer.resolve(wantlist);
+      }
+      else {
+        this.fetch('wantlist').then(function() {
+          defer.resolve(wantlist);
+        });
+      }
+      return defer.promise;
+    };
 
     return {
-      requestToken: requestToken
-    };
+      getCollection: getCollection,
+      getWantlist: getWantlist,
+      fetch: fetch
+    }
+
 
   }]);
