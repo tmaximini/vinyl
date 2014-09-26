@@ -22,16 +22,13 @@ package com.ionicframework.vinyl178401;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class vinyl extends CordovaActivity 
+public class vinyl extends CordovaActivity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.init();
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html");
+        loadUrl(launchUrl);
     }
 }
-
