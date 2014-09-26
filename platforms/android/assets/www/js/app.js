@@ -1,7 +1,14 @@
 
-angular.module('vinyl', ['ionic', 'ngResource'])
+angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
 
-  .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+
+    $authProvider.oauth1({
+      url: '/auth/discogs',
+      name: 'Discogs',
+      type: '1.0',
+      popupOptions: { width: 495, height: 645 }
+    });
 
     $httpProvider.defaults.withCredentials = true;
 

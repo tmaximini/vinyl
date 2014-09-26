@@ -1,7 +1,15 @@
 
-angular.module('vinyl', ['ionic', 'ngResource'])
+angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
 
-  .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+
+    $authProvider.oauth1({
+      url: 'http://localhost:3000/auth/discogs',
+      name: 'discogs',
+      type: '1.0',
+      redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+      popupOptions: { width: 495, height: 645 }
+    });
 
     $httpProvider.defaults.withCredentials = true;
 
@@ -29,6 +37,15 @@ angular.module('vinyl', ['ionic', 'ngResource'])
           }
         }
       })
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/login.html',
+            controller: 'LoginCtrl',
+          }
+        }
+      })
       .state('app.wantlist', {
         url: '/wantlist',
         views: {
@@ -42,11 +59,16 @@ angular.module('vinyl', ['ionic', 'ngResource'])
     $urlRouterProvider.otherwise('/app/collection');
   })
 
-  .run(function($ionicPlatform, $rootScope) {
+  .run(function($ionicPlatform, $rootScope, $location, $auth) {
 
-    $rootScope.$on('$stateChangeStart', function() {
-      console.log('route');
+    console.log($auth, $auth.isAuthenticated);
+
+    $rootScope.$on('$stateChangeStart', function($auth) {
+      if ($auth.isAuthenticated()) {
+        $location.path('/login');
+      }
     });
+
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)

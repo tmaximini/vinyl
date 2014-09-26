@@ -92,6 +92,7 @@
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/angular-ui-router \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/collide \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/ionic \
+/Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/satellizer \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/angular/angular-csp.css \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/angular/angular.js \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/angular/angular.min.js \
@@ -202,6 +203,10 @@
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-icons.scss \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/ionic/scss/ionicons/_ionicons-variables.scss \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/ionic/scss/ionicons/ionicons.scss \
+/Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/satellizer/bower.json \
+/Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/satellizer/README.md \
+/Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/satellizer/satellizer.js \
+/Users/thomas/projects/start/vinyl/platforms/android/assets/www/lib/satellizer/satellizer.min.js \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/thomas/projects/start/vinyl/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \

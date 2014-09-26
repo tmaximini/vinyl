@@ -1,7 +1,15 @@
 
-angular.module('vinyl', ['ionic', 'ngResource'])
+angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
 
-  .config(["$stateProvider", "$urlRouterProvider", "$httpProvider", function($stateProvider, $urlRouterProvider, $httpProvider) {
+  .config(["$stateProvider", "$urlRouterProvider", "$httpProvider", "$authProvider", function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+
+    $authProvider.oauth1({
+      url: 'http://localhost:3000/auth/discogs',
+      name: 'discogs',
+      type: '1.0',
+      redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
+      popupOptions: { width: 495, height: 645 }
+    });
 
     $httpProvider.defaults.withCredentials = true;
 
@@ -29,6 +37,15 @@ angular.module('vinyl', ['ionic', 'ngResource'])
           }
         }
       })
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/login.html',
+            controller: 'LoginCtrl',
+          }
+        }
+      })
       .state('app.wantlist', {
         url: '/wantlist',
         views: {
@@ -42,11 +59,16 @@ angular.module('vinyl', ['ionic', 'ngResource'])
     $urlRouterProvider.otherwise('/app/collection');
   }])
 
-  .run(["$ionicPlatform", "$rootScope", function($ionicPlatform, $rootScope) {
+  .run(["$ionicPlatform", "$rootScope", "$location", "$auth", function($ionicPlatform, $rootScope, $location, $auth) {
 
-    $rootScope.$on('$stateChangeStart', function() {
-      console.log('route');
+    console.log($auth, $auth.isAuthenticated);
+
+    $rootScope.$on('$stateChangeStart', function($auth) {
+      if ($auth.isAuthenticated()) {
+        $location.path('/login');
+      }
     });
+
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -112,32 +134,41 @@ angular.module('vinyl')
 
 angular.module('vinyl')
 
-  .controller('CollectionCtrl', ["$scope", "$window", "$ionicLoading", "$ionicPopup", "ArtistService", "LabelService", "UserService", "AuthService", function($scope, $window, $ionicLoading, $ionicPopup, ArtistService, LabelService, UserService, AuthService) {
+  .controller('CollectionCtrl', ["$scope", "$window", "$ionicLoading", "$ionicPopup", "ArtistService", "LabelService", "UserService", function($scope, $window, $ionicLoading, $ionicPopup, ArtistService, LabelService, UserService) {
     console.log('hi from CollectionCtrl');
 
     $scope.collection = [];
     $scope.userLoggedIn = false;
-    var loginWindow;
 
-    $ionicLoading.show({
-      template: 'Loading Collection...',
-      noBackdrop: true
-    });
+    // $ionicLoading.show({
+    //   template: 'Loading Collection...',
+    //   noBackdrop: true
+    // });
 
 
-    AuthService.testLoggedIn().then(function(isLoggedIn) {
-      if (!isLoggedIn) {
-        AuthService.showAuthPopup();
-      } else {
-        UserService.getCollection().then(function(data) {
-          $ionicLoading.hide();
-          console.log('collection: ', data);
-          $scope.collection = data.releases;
-          $scope.pagination = data.pagination;
-        });
-      }
+    // AuthService.testLoggedIn().then(function(isLoggedIn) {
+    //   if (!isLoggedIn) {
+    //     AuthService.showAuthPopup();
+    //   } else {
+    //     UserService.getCollection().then(function(data) {
+    //       $ionicLoading.hide();
+    //       console.log('collection: ', data);
+    //       $scope.collection = data.releases;
+    //       $scope.pagination = data.pagination;
+    //     });
+    //   }
 
-    });
+    // });
+
+  }]);
+'use strict';
+
+angular.module('vinyl')
+  .controller('LoginCtrl', ["$scope", "$auth", function($scope, $auth) {
+
+    $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
 
   }]);
 'use strict';
@@ -241,41 +272,15 @@ angular.module('vinyl')
 'use strict';
 
 angular.module('vinyl')
-  .service('AuthService', ["$q", "$window", "$http", function ($q, $window, $http) {
+  .service('AuthService', ["$auth", function ($auth) {
 
-    var user = null;
-    var userLoggedIn = false;
-
-    var showAuthPopup = function() {
-      $window.open('http://localhost:3000/auth', '_blank', 'location=no,toolbar=no');
+    var isAuthenticated = function() {
+      console.log($auth);
     };
-
-    var testLoggedIn = function() {
-      var deferred = $q.defer();
-      $http.get('http://localhost:3000/me')
-        .success(function(data) {
-          console.log('data:', data);
-          if (!data.error && data.username) {
-            console.log('user is logged in!');
-            userLoggedIn = true;
-            deferred.resolve(userLoggedIn);
-          } else {
-            console.log('user is NOT logged in!');
-            userLoggedIn = false;
-            deferred.resolve(userLoggedIn);
-          }
-        });
-      return deferred.promise;
-    };
-
-
-
 
     return {
-      showAuthPopup: showAuthPopup,
-      testLoggedIn: testLoggedIn
+      isAuthenticated: isAuthenticated
     };
-
 
   }]);
 'use strict';
