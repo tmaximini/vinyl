@@ -63,7 +63,7 @@ angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
 
     console.log($auth, $auth.isAuthenticated);
 
-    $rootScope.$on('$stateChangeStart', function($auth) {
+    $rootScope.$on('$stateChangeStart', function() {
       if ($auth.isAuthenticated()) {
         $location.path('/login');
       }
