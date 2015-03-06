@@ -8,24 +8,24 @@ angular.module('vinyl')
     $scope.collection = [];
     $scope.userLoggedIn = false;
 
-    // $ionicLoading.show({
-    //   template: 'Loading Collection...',
-    //   noBackdrop: true
-    // });
+    $ionicLoading.show({
+      template: 'Loading Collection...',
+      noBackdrop: true
+    });
 
 
-    // AuthService.testLoggedIn().then(function(isLoggedIn) {
-    //   if (!isLoggedIn) {
-    //     AuthService.showAuthPopup();
-    //   } else {
-    //     UserService.getCollection().then(function(data) {
-    //       $ionicLoading.hide();
-    //       console.log('collection: ', data);
-    //       $scope.collection = data.releases;
-    //       $scope.pagination = data.pagination;
-    //     });
-    //   }
+    AuthService.testLoggedIn().then(function(isLoggedIn) {
+      if (!isLoggedIn) {
+        AuthService.showAuthPopup();
+      } else {
+        UserService.getCollection().then(function(data) {
+          $ionicLoading.hide();
+          console.log('collection: ', data);
+          $scope.collection = data.releases;
+          $scope.pagination = data.pagination;
+        });
+      }
 
-    // });
+    });
 
   });

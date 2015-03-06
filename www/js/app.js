@@ -4,11 +4,11 @@ angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
   .config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
 
     $authProvider.oauth1({
-      url: 'http://localhost:3000/auth/discogs',
+      url: 'http://localhost:3000/auth',
       name: 'discogs',
       type: '1.0',
       redirectUri: window.location.origin || window.location.protocol + '//' + window.location.host,
-      popupOptions: { width: 495, height: 645 }
+      popupOptions: null
     });
 
     $httpProvider.defaults.withCredentials = true;
@@ -33,7 +33,7 @@ angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
         views: {
           'menuContent': {
             templateUrl: 'templates/collection.html',
-            controller: 'CollectionCtrl',
+            controller: 'CollectionCtrl'
           }
         }
       })
@@ -42,7 +42,7 @@ angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
         views: {
           'menuContent': {
             templateUrl: 'templates/login.html',
-            controller: 'LoginCtrl',
+            controller: 'LoginCtrl'
           }
         }
       })
@@ -51,7 +51,7 @@ angular.module('vinyl', ['ionic', 'ngResource', 'satellizer'])
         views: {
           'menuContent': {
             templateUrl: 'templates/wantlist.html',
-            controller: 'WantlistCtrl',
+            controller: 'WantlistCtrl'
           }
         }
       });
