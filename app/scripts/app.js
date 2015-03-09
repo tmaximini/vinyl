@@ -44,6 +44,16 @@ angular.module('Vinyl', ['ionic', 'ngCordova', 'ngResource'])
           }
         }
       })
+      .state('app.login', {
+        url: '/login',
+        cache: true,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/login.html',
+            controller: 'LoginController'
+          }
+        }
+      })
       .state('app.settings', {
         url: '/settings',
         cache: true,
