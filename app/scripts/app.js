@@ -10,7 +10,7 @@
  */
 
 
-angular.module('Vinyl', ['ionic', 'ngCordova', 'ngResource'])
+angular.module('Vinyl', ['ionic', 'ngCordova', 'ngResource', 'ngCordovaOauth'])
 
   .run(function($ionicPlatform) {
 

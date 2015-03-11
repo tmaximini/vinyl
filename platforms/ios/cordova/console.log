@@ -1,9 +1,110 @@
-2014-08-12 13:12:52.690 vinyl[23027:70b] Multi-tasking -> Device: YES, App: YES
-2014-08-12 13:12:52.733 vinyl[23027:70b] Unlimited access to network resources
-2014-08-12 13:12:52.942 vinyl[23027:70b] [CDVTimer][keyboard] 0.089049ms
-2014-08-12 13:12:52.943 vinyl[23027:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
-2014-08-12 13:12:52.943 vinyl[23027:70b] [CDVTimer][statusbar] 0.486016ms
-2014-08-12 13:12:52.944 vinyl[23027:70b] [CDVTimer][TotalPluginStartup] 1.622021ms
-2014-08-12 13:12:53.199 vinyl[23027:70b] Resetting plugins due to page load.
-2014-08-12 13:12:53.524 vinyl[23027:70b] Finished load of: file:///Users/thomas/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/CC1EF379-B5F0-4086-A216-1BF45A47A4DF/vinyl.app/www/index.html
-Terminating in response to SpringBoard's termination.
+2015-03-11 12:44:04.848 vinyl[19722:80b] Apache Cordova native platform version 3.6.3 is starting.
+2015-03-11 12:44:04.851 vinyl[19722:80b] Multi-tasking -> Device: YES, App: YES
+2015-03-11 12:44:04.867 vinyl[19722:80b] Unlimited access to network resources
+2015-03-11 12:44:04.953 vinyl[19722:80b] [CDVTimer][keyboard] 0.073016ms
+2015-03-11 12:44:04.954 vinyl[19722:80b] [CDVTimer][TotalPluginStartup] 0.653028ms
+2015-03-11 12:44:05.149 vinyl[19722:80b] Resetting plugins due to page load.
+2015-03-11 12:44:05.465 vinyl[19722:80b] Finished load of: file:///Users/thomas/Library/Developer/CoreSimulator/Devices/3AEEA248-05F8-48B9-87A1-E1A73E957A10/data/Applications/CCB7C3F1-B11D-493E-950E-EC38F7E90C82/vinyl.app/www/index.html#/app/home
+2015-03-11 12:44:13.658 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:13.659 vinyl[19722:80b] boobs
+2015-03-11 12:44:26.199 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:26.200 vinyl[19722:80b] boobs
+2015-03-11 12:44:26.550 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:26.551 vinyl[19722:80b] boobs
+2015-03-11 12:44:26.628 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:26.629 vinyl[19722:80b] boobs
+2015-03-11 12:44:41.414 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:41.414 vinyl[19722:80b] boobs
+2015-03-11 12:44:49.869 vinyl[19722:80b] handleLogin!!
+2015-03-11 12:44:49.870 vinyl[19722:80b] boobs
+2015-03-11 12:48:03.144 vinyl[20010:80b] Apache Cordova native platform version 3.6.3 is starting.
+2015-03-11 12:48:03.146 vinyl[20010:80b] Multi-tasking -> Device: YES, App: YES
+2015-03-11 12:48:03.161 vinyl[20010:80b] Unlimited access to network resources
+2015-03-11 12:48:03.242 vinyl[20010:80b] [CDVTimer][keyboard] 0.109017ms
+2015-03-11 12:48:03.243 vinyl[20010:80b] [CDVTimer][TotalPluginStartup] 0.730991ms
+2015-03-11 12:48:03.393 vinyl[20010:80b] Resetting plugins due to page load.
+2015-03-11 12:48:03.709 vinyl[20010:80b] Finished load of: file:///Users/thomas/Library/Developer/CoreSimulator/Devices/3AEEA248-05F8-48B9-87A1-E1A73E957A10/data/Applications/CCB7C3F1-B11D-493E-950E-EC38F7E90C82/vinyl.app/www/index.html#/app/home
+2015-03-11 12:48:08.145 vinyl[20010:80b] handleLogin!!
+2015-03-11 12:48:08.146 vinyl[20010:80b] boobs
+2015-03-11 12:48:11.062 vinyl[20010:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 12:48:11.069 vinyl[20010:80b] THREAD WARNING: ['InAppBrowser'] took '59.236084' ms. Plugin should use a background thread.
+2015-03-11 12:48:34.172 vinyl[20010:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 12:51:41.405 vinyl[20272:80b] Apache Cordova native platform version 3.6.3 is starting.
+2015-03-11 12:51:41.413 vinyl[20272:80b] Multi-tasking -> Device: YES, App: YES
+2015-03-11 12:51:41.422 vinyl[20272:80b] Unlimited access to network resources
+2015-03-11 12:51:41.547 vinyl[20272:80b] [CDVTimer][keyboard] 0.114977ms
+2015-03-11 12:51:41.548 vinyl[20272:80b] [CDVTimer][TotalPluginStartup] 1.812994ms
+2015-03-11 12:51:41.744 vinyl[20272:80b] Resetting plugins due to page load.
+2015-03-11 12:51:42.007 vinyl[20272:80b] Finished load of: file:///Users/thomas/Library/Developer/CoreSimulator/Devices/3AEEA248-05F8-48B9-87A1-E1A73E957A10/data/Applications/CCB7C3F1-B11D-493E-950E-EC38F7E90C82/vinyl.app/www/index.html#/app/home
+2015-03-11 12:52:00.977 vinyl[20272:80b] handleLogin!!
+2015-03-11 12:52:00.978 vinyl[20272:80b] boobs
+2015-03-11 12:52:03.194 vinyl[20272:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 12:52:03.200 vinyl[20272:80b] THREAD WARNING: ['InAppBrowser'] took '41.208984' ms. Plugin should use a background thread.
+2015-03-11 12:52:18.933 vinyl[20272:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 12:52:19.538 vinyl[20272:80b] Error -> Unable to retrieve access token. Your request token may have expired.
+2015-03-11 13:02:11.518 vinyl[20574:80b] Apache Cordova native platform version 3.6.3 is starting.
+2015-03-11 13:02:11.525 vinyl[20574:80b] Multi-tasking -> Device: YES, App: YES
+2015-03-11 13:02:11.533 vinyl[20574:80b] Unlimited access to network resources
+2015-03-11 13:02:11.554 vinyl[20574:80b] [CDVTimer][keyboard] 0.111997ms
+2015-03-11 13:02:11.555 vinyl[20574:80b] [CDVTimer][TotalPluginStartup] 0.761986ms
+2015-03-11 13:02:11.705 vinyl[20574:80b] Resetting plugins due to page load.
+2015-03-11 13:02:12.017 vinyl[20574:80b] Finished load of: file:///Users/thomas/Library/Developer/CoreSimulator/Devices/3AEEA248-05F8-48B9-87A1-E1A73E957A10/data/Applications/CCB7C3F1-B11D-493E-950E-EC38F7E90C82/vinyl.app/www/index.html#/app/home
+2015-03-11 13:03:14.906 vinyl[20574:80b] handleLogin!!
+2015-03-11 13:03:15.978 vinyl[20574:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 13:03:15.982 vinyl[20574:80b] THREAD WARNING: ['InAppBrowser'] took '33.647949' ms. Plugin should use a background thread.
+2015-03-11 13:03:30.295 vinyl[20574:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 13:03:31.722 vinyl[20574:80b] Error -> Invalid signature. Expected signature base string: POST&https%3A%2F%2Fapi.discogs.com%2Foauth%2Faccess_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%252Fcallback%26oauth_consumer_key%3DDsEvNWcHepADZKygepwO%26oauth_nonce%3Dda39a3ee5e6b4b0d3255bfef95601890afd80709%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1426075395%26oauth_token%3DiFlULytkYzTkTpjhGHaRxDdXLrkkeGfLiJoEgeMZ%26oauth_verifier%3DLkZfWtUnfa%26oauth_version%3D1.0
+2015-03-11 13:06:11.682 vinyl[20574:80b] handleLogin!!
+2015-03-11 13:06:12.499 vinyl[20574:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 13:06:12.501 vinyl[20574:80b] THREAD WARNING: ['InAppBrowser'] took '10.770752' ms. Plugin should use a background thread.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFillColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetStrokeColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSaveGState: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFlatness: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextAddPath: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextDrawPath: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextRestoreGState: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSaveGState: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFlatness: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextAddPath: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextDrawPath: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextRestoreGState: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFillColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetStrokeColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFillColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetStrokeColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextGetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextFillRects: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFillColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetStrokeColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextGetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextFillRects: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetFillColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetStrokeColorWithColor: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextGetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextFillRects: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+Mar 11 13:06:19 spambot-2.local vinyl[20574] <Error>: CGContextSetBlendMode: invalid context 0x0. This is a serious error. This application, or a library it uses, is using an invalid context  and is thereby contributing to an overall degradation of system stability and reliability. This notice is a courtesy: please fix this problem. It will become a fatal error in an upcoming update.
+2015-03-11 13:06:29.486 vinyl[20574:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 13:06:31.288 vinyl[20574:80b] Error -> Invalid signature. Expected signature base string: POST&https%3A%2F%2Fapi.discogs.com%2Foauth%2Faccess_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%252Fcallback%26oauth_consumer_key%3DDsEvNWcHepADZKygepwO%26oauth_nonce%3Dda39a3ee5e6b4b0d3255bfef95601890afd80709%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1426075572%26oauth_token%3DygJcaCjIbeTKgFZiKBMEhDZXAuhpHCxnbeuGHvjd%26oauth_verifier%3DZZMHkWvURI%26oauth_version%3D1.0
+2015-03-11 13:07:58.828 vinyl[20574:80b] handleLogin!!
+2015-03-11 13:07:59.694 vinyl[20574:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 13:08:18.638 vinyl[20574:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 13:08:20.187 vinyl[20574:80b] Error -> Invalid signature. Expected signature base string: POST&https%3A%2F%2Fapi.discogs.com%2Foauth%2Faccess_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%252Fcallback%26oauth_consumer_key%3DDsEvNWcHepADZKygepwO%26oauth_nonce%3Dda39a3ee5e6b4b0d3255bfef95601890afd80709%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1426075679%26oauth_token%3DAfNCMpTuFmcSZXBwkIuCzEcjgKboBsHhcGVtqXOZ%26oauth_verifier%3DdyroISNhML%26oauth_version%3D1.0
+2015-03-11 13:10:22.307 vinyl[20865:80b] Apache Cordova native platform version 3.6.3 is starting.
+2015-03-11 13:10:22.309 vinyl[20865:80b] Multi-tasking -> Device: YES, App: YES
+2015-03-11 13:10:22.315 vinyl[20865:80b] Unlimited access to network resources
+2015-03-11 13:10:22.339 vinyl[20865:80b] [CDVTimer][keyboard] 0.092983ms
+2015-03-11 13:10:22.339 vinyl[20865:80b] [CDVTimer][TotalPluginStartup] 0.811994ms
+2015-03-11 13:10:22.469 vinyl[20865:80b] Resetting plugins due to page load.
+2015-03-11 13:10:22.753 vinyl[20865:80b] Finished load of: file:///Users/thomas/Library/Developer/CoreSimulator/Devices/3AEEA248-05F8-48B9-87A1-E1A73E957A10/data/Applications/CCB7C3F1-B11D-493E-950E-EC38F7E90C82/vinyl.app/www/index.html#/app/home
+2015-03-11 13:10:43.348 vinyl[20865:80b] handleLogin!!
+2015-03-11 13:10:44.579 vinyl[20865:80b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2015-03-11 13:10:44.583 vinyl[20865:80b] THREAD WARNING: ['InAppBrowser'] took '25.437744' ms. Plugin should use a background thread.
+2015-03-11 13:10:59.410 vinyl[20865:80b] signatureObj:  [object Object]
+2015-03-11 13:10:59.415 vinyl[20865:80b] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2015-03-11 13:11:01.051 vinyl[20865:80b] Error -> Invalid signature. Expected signature base string: POST&https%3A%2F%2Fapi.discogs.com%2Foauth%2Faccess_token&oauth_callback%3Dhttp%253A%252F%252Flocalhost%252Fcallback%26oauth_consumer_key%3DDsEvNWcHepADZKygepwO%26oauth_nonce%3Dda39a3ee5e6b4b0d3255bfef95601890afd80709%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1426075843%26oauth_token%3DFXbyCcaNwLqFuYJFFGteLNgBnTPsgjdmGaaIfSyt%26oauth_verifier%3DHZUYukFpRW%26oauth_version%3D1.0

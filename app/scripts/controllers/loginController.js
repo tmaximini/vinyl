@@ -7,10 +7,15 @@
  * # LoginController
  */
 angular.module('Vinyl')
-  .controller('LoginController', function($scope) {
+  .controller('LoginController', function($scope, $cordovaOauth) {
 
     $scope.handleLogin = function() {
-        // add discogs oauth here
+      console.log('handleLogin!!');
+        $cordovaOauth.discogs2('DsEvNWcHepADZKygepwO', 'lcgkGWEVfGwHNQgJwHuHIxEjXzGSDjtq').then(function(result) {
+            console.log('Response Object -> ' + angular.fromJson(result));
+        }, function(error) {
+            console.log('Error -> ' + error);
+        });
     };
 
   });
